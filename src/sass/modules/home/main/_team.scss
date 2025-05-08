@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#Team {
+    border-top: 3px solid #ff3122;
+    padding: 1rem 2rem;
+    width: 100%;
+    height: fit-content;
+    background: #3F7D58;
+    
+    .teamContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        
+        .teamTittle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 1rem;
+            
+            .smallTittle {
+                font-size: 1rem;
+                color: #fff;
+            }
+            
+            .largeTittle {
+                font-size: 2rem;
+                color: #fff;
+            }
+        }
+        .teamItems {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            width: 100%;            
+            .teamCard {
+                position: relative;
+                border-radius: 5px;
+                overflow: hidden;
+                width: 100%;
+                background: #000;
+                transition: all 0.3s cubic-bezier(0.6, 0.4, 0, 1);
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.3s ease;
+                }
+                
+                h5 {
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    text-align: center;
+                    color: white;
+                    transition: all 0.3s ease;
+                    opacity: 0;
+                    z-index: 2;
+                }
+                h5 {
+                    bottom: 60%;
+                    font-size: 1rem;
+                    font-weight: 600;
+                }
+                .social-icons {
+                    position: absolute;
+                    bottom: 30%;
+                    left: 0;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    gap: 1rem;
+                    opacity: 0;
+                    transition: all 0.3s ease;
+                    z-index: 2;
+                    
+                    a {
+                        color: white;
+                        background: rgba(0, 0, 0, 0.2);
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.2s ease;
+                        
+                        &:hover {
+                            background: #ff3122;
+                            transform: translateY(-3px);
+                        }
+                        i {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+                
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.5);
+                    opacity: 0;
+                    transition: all 0.3s ease;
+                }
+                
+                &:hover {
+                    transform: translateY(-5px);
+                    border: 2px solid #ff3122;
+                    img {
+                        transform: scale(1.05);
+                    }
+                    
+                    h5 {
+                        opacity: 1;
+                        bottom: 65%;
+                    }
+                    
+                    p {
+                        opacity: 1;
+                        bottom: 60%;
+                    }
+                    
+                    .social-icons {
+                        opacity: 1;
+                        bottom: 40%;
+                    }
+                    
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Responsive Design
+    @media (max-width: 768px) {
+        .teamItems {
+            grid-template-columns: repeat(2, 1fr) !important;
+            
+            .teamCard {
+                max-width: 100% !important;
+                
+                &:hover {
+                    h5 {
+                        bottom: 60% !important;
+                    }
+                    
+                    .social-icons {
+                        bottom: 35% !important;
+                    }
+                }
+            }
+        }
+    }
+    
+    @media (max-width: 480px) {
+        padding: 1rem !important;
+        
+        .teamTittle {
+            .smallTittle {
+                font-size: 0.8rem !important;
+            }
+            
+            .largeTittle {
+                font-size: 1.5rem !important;
+            }
+        }
+        
+        .teamItems {
+            grid-template-columns: 1fr !important;
+            
+            .teamCard {
+                max-width: 280px !important;
+                margin: 0 auto;
+                
+                &:hover {
+                    h5 {
+                        bottom: 65% !important;
+                        font-size: 1.3rem !important;
+                    }
+                    .social-icons {
+                        bottom: 40% !important;
+                        
+                        a {
+                            width: 32px !important;
+                            height: 32px !important;
+                            
+                            i {
+                                font-size: 0.9rem !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

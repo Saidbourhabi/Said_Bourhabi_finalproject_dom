@@ -12011,5 +12011,185 @@ textarea.form-control-lg {
     grid-template-rows: repeat(12, 1fr);
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#Team {
+  border-top: 3px solid #ff3122;
+  padding: 1rem 2rem;
+  width: 100%;
+  height: fit-content;
+  background: #3F7D58;
+}
+#Team .teamContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+#Team .teamContent .teamTittle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+#Team .teamContent .teamTittle .smallTittle {
+  font-size: 1rem;
+  color: #fff;
+}
+#Team .teamContent .teamTittle .largeTittle {
+  font-size: 2rem;
+  color: #fff;
+}
+#Team .teamContent .teamItems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+#Team .teamContent .teamItems .teamCard {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  background: #000;
+  transition: all 0.3s cubic-bezier(0.6, 0.4, 0, 1);
+}
+#Team .teamContent .teamItems .teamCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+#Team .teamContent .teamItems .teamCard h5, #Team .teamContent .teamItems .teamCard .h5 {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  transition: all 0.3s ease;
+  opacity: 0;
+  z-index: 2;
+}
+#Team .teamContent .teamItems .teamCard h5, #Team .teamContent .teamItems .teamCard .h5 {
+  bottom: 60%;
+  font-size: 1rem;
+  font-weight: 600;
+}
+#Team .teamContent .teamItems .teamCard .social-icons {
+  position: absolute;
+  bottom: 30%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+#Team .teamContent .teamItems .teamCard .social-icons a {
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+#Team .teamContent .teamItems .teamCard .social-icons a:hover {
+  background: #ff3122;
+  transform: translateY(-3px);
+}
+#Team .teamContent .teamItems .teamCard .social-icons a i {
+  font-size: 1rem;
+}
+#Team .teamContent .teamItems .teamCard::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+#Team .teamContent .teamItems .teamCard:hover {
+  transform: translateY(-5px);
+  border: 2px solid #ff3122;
+}
+#Team .teamContent .teamItems .teamCard:hover img {
+  transform: scale(1.05);
+}
+#Team .teamContent .teamItems .teamCard:hover h5, #Team .teamContent .teamItems .teamCard:hover .h5 {
+  opacity: 1;
+  bottom: 65%;
+}
+#Team .teamContent .teamItems .teamCard:hover p {
+  opacity: 1;
+  bottom: 60%;
+}
+#Team .teamContent .teamItems .teamCard:hover .social-icons {
+  opacity: 1;
+  bottom: 40%;
+}
+#Team .teamContent .teamItems .teamCard:hover::after {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  #Team .teamItems {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  #Team .teamItems .teamCard {
+    max-width: 100% !important;
+  }
+  #Team .teamItems .teamCard:hover h5, #Team .teamItems .teamCard:hover .h5 {
+    bottom: 60% !important;
+  }
+  #Team .teamItems .teamCard:hover .social-icons {
+    bottom: 35% !important;
+  }
+}
+@media (max-width: 480px) {
+  #Team {
+    padding: 1rem !important;
+  }
+  #Team .teamTittle .smallTittle {
+    font-size: 0.8rem !important;
+  }
+  #Team .teamTittle .largeTittle {
+    font-size: 1.5rem !important;
+  }
+  #Team .teamItems {
+    grid-template-columns: 1fr !important;
+  }
+  #Team .teamItems .teamCard {
+    max-width: 280px !important;
+    margin: 0 auto;
+  }
+  #Team .teamItems .teamCard:hover h5, #Team .teamItems .teamCard:hover .h5 {
+    bottom: 65% !important;
+    font-size: 1.3rem !important;
+  }
+  #Team .teamItems .teamCard:hover .social-icons {
+    bottom: 40% !important;
+  }
+  #Team .teamItems .teamCard:hover .social-icons a {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  #Team .teamItems .teamCard:hover .social-icons a i {
+    font-size: 0.9rem !important;
+  }
+}
 
 /*# sourceMappingURL=app.css.map */
