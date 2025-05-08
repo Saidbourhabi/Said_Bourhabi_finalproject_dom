@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#Gallery{
+    padding: 1rem 2rem ;
+    width: 100%;
+    height: fit-content;
+    background: #3F7D58;
+    border-top: 3px solid #ff3122;
+    .galleryContent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        .galleryTittle{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-align: center;
+            .smallTittle{
+                font-size: 1rem;
+                color: #fff;
+            }
+            .largeTittle{
+                font-size: 2rem;
+                color: #fff;
+            }
+        }
+        .Galleryitems{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            .galleryCard{
+                width: 200px;
+                height: 200px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border: 2px solid #ff3122;
+                    box-shadow: 0 0 10px #00000080;
+                    object-fit: cover;
+                    opacity: 1;
+                    -webkit-transition: .3s ease-in-out;
+                    transition: .3s ease-in-out;
+                }
+                &:hover{
+                    opacity: .5;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    #Gallery{
+        .galleryContent{
+            .Galleryitems{
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+        }
+    }
+    
+}
+@media (max-width: 480px) {
+    #Gallery{
+        .galleryContent{
+            .Galleryitems{
+                grid-template-columns: repeat(1, 1fr);
+                grid-template-rows: repeat(12, 1fr);
+            }
+        }
+    }
+    
+}
